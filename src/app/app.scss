@@ -14,3 +14,24 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.toolbar-background, {
+    //background-color: #0072ff;
+    //background: linear-gradient(to right, #00c6ff, #0072ff);
+    //background: linear-gradient(to right, #7F00FF, #E100FF);
+    background: linear-gradient(to left, #009efd, #2af598);
+}
+.toolbar-title, .bar-button {
+    color: white;
+}
+
+.scroll-content{
+    padding: 8px;
+
+    overflow-y: auto !important;
+}
+
+ .card_shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    width: 100%;
+}

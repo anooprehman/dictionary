@@ -1,14 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+  
+    <ion-navbar>
+      <ion-title>നിഘണ്ടു</ion-title>
+    </ion-navbar>
+    <ion-toolbar>
+      <ion-searchbar (ionInput)="getVocabs($event)"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-card class="card_shadow">
+    <ion-list no-lines>
+      <ion-item *ngFor="let vocab of filteredVocabs;" style="border-top:1px solid #c8c7cc">
+        <h4>{{vocab.english}}</h4>
+        <p>{{vocab.type}}</p>
+        <p>{{vocab.malayalam}}</p>
+      </ion-item>
+    </ion-list>
+    </ion-card>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="filteredVocabs.length>0">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
